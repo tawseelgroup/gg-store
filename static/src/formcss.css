@@ -1,0 +1,24 @@
+.button-group{
+    display: flex;
+    border-radius:3px;
+    overflow: hidden;
+    border: #ccc solid 1px;
+    width: 75%;
+    margin: auto;
+    
+}
+
+.button-group-item{
+    padding: 10px 15px;
+    border-right: #ccc solid 1px;
+    width: 50%;
+    text-align: center;
+    font-weight: bold !important;
+    transition: background-color 0.3s ease;
+    color: steelblue !important;
+}
+
+.button-group-item:last-child{
+    border-right: none;
+}
+

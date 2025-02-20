@@ -1,0 +1,82 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'src/input.css' %}">
+    <link rel="stylesheet" href="{% static 'src/components.css' %}">
+    <link rel="stylesheet" href="{% static 'src/formcss.css' %}">
+    <link rel="stylesheet" href="{% static 'src/main.css' %}">
+    {% tailwind_css %}
+    <title>Document</title>
+</head>
+<body class="inter flex min-h-screen">
+    <aside class="px-3 py-4 border-e">
+        <section class="flex flex-col justify-between h-[95vh] py-3">
+            <div>
+                <a href="{% url 'main:homepage' %}" class="flex flex-col mb-4 gap-y-3">
+                    <img src="{% static 'images/logo/inventory-management.png' %}" alt="" width='50px' class="m-auto py-2">
+                    <div class="text-blue-700 text-center text-sm hidden md:block sm:text-lg lg:text-xl  text-wrap xl:text-nowrap  font-extrabold">Gulf Gate</div>
+                    <div class="text-blue-700 text-center text-sm hidden md:block sm:text-lg lg:text-xl  text-wrap xl:text-nowrap  font-extrabold ">Main Warehouse</div>
+                </a>
+                <hr>
+                <section class="flex flex-col my-3 gap-y-5">
+                    {% comment %} <a href="" class="text-blue-600 font-semibold sm:text-lg ">Home</a> {% endcomment %}
+                    <a href="{% url 'purchase:purchaseView' %}" class="text-gray-600 font-semibold sm:text-lg ">
+                        <div class="flex gap-x-2">
+                            <span class="m-auto md:hidden lg:m-0 lg:inline-block"><img src="{% static 'images/logo/purchase.png' %}" alt="accounting" width='20px'></span>
+                            <span class="hidden md:inline-block leading-5">Purchase</span>
+                        </div>
+                    </a>
+                    <a href="{% url 'inventory:inventoryDashboard' %}" class="text-gray-600 font-semibold sm:text-lg ">                
+                        <div class="flex gap-x-2">
+                            <span class="m-auto md:hidden lg:m-0 lg:inline-block"><img src="{% static 'images/logo/inventory.png' %}" alt="production" width='20px'></span>
+                            <span class="hidden md:inline-block leading-5">Inventory</span>
+                        </div>
+                    </a>
+                    <a href="{% url 'operations:operations' %}" class="text-gray-600 font-semibold sm:text-lg ">
+                        <div class="flex gap-x-2">
+                            <span class="m-auto md:hidden lg:m-0 lg:inline-block"><img src="{% static 'images/logo/production.png' %}" alt="production" width='20px'></span>
+                            <span class="hidden md:inline-block leading-5">Production</span>
+                        </div>
+                    </a>
+                    <a href="{% url 'accounting:accountingDashboard' %}" class="text-gray-600 font-semibold sm:text-lg ">
+                        <div class="flex gap-x-2">
+                            <span class="m-auto md:hidden lg:m-0 lg:inline-block"><img src="{% static 'images/logo/accounting.png' %}" alt="accounting" width='20px'></span>
+                            <span class="hidden md:inline-block leading-5">Accounting</span>
+                        </div>
+                    </a>
+                    <a href="{% url 'sales:salesDashboard' %}" class="text-gray-600 font-semibold sm:text-lg ">
+                        <div class="flex gap-x-2">
+                            <span class="m-auto md:hidden lg:m-0 lg:inline-block"><img src="{% static 'images/logo/sales.png' %}" alt="sales" width='20px'></span>
+                            <span class="hidden md:inline-block leading-5">Sales</span>
+                        </div>
+                    </a>
+                </section>
+
+            </div>
+            <div>
+                <a href="" class="flex gap-x-1 text-blue-500">
+                    <span class="m-auto md:m-0"><img src="{% static 'images/logo/settings.png' %}" alt="sales" width='20px'></span>
+                    <span class="hidden md:inline-block leading-5">Settings</span>
+                </a> 
+                <p class="w-full md:ms-3  text-gray-600 "><span class="m-auto  hidden lg:inline-block">version</span> <span class="m-auto inline-block lg:hidden">v</span> <span>1.0</span> </p>               
+            </div>
+        </section>
+    </aside>
+
+    <main class="flex-1">
+        <nav class="bg-sky-800 text-gray-500 py-2 px-10 flex justify-end border-b border-slate-100 shadow-sm">
+            <a href="{% url 'accounts:accountsControl' %}" class="text-white">Login</a>
+        </nav>
+        <div class="px-3 py-2">
+            {% block container %}
+            {% endblock container %}
+        </div>
+    </main>
+</body>
+</html>

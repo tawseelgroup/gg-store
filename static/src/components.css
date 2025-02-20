@@ -1,0 +1,88 @@
+.list-group{
+    border-radius: 3px;
+    overflow: hidden;
+    border: #ccc solid 1px;
+    padding: 0px;
+    width: 75%;
+    margin: 0 auto;
+}
+
+.list-group-item{
+    border: none;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background-color 0.3s ease;
+    border-bottom: #ccc solid 1px;
+}
+
+.list-group-item:last-child{
+    border-bottom: none;
+}
+
+.list-group-item:hover{
+    background-color: #f5f5f5;
+    cursor: pointer !important;
+}
+
+
+.table{
+    width: 100%;
+    border-collapse: separate;
+    /* border: #ccc solid 1px; */
+    /* border-radius: 5px; */
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    /* box-shadow: 0 0 5px 5px rgba(221, 221, 221, 0.3); */
+}
+
+.table tr{
+    padding: 10px;
+    text-align: left;
+    /* border-bottom: #ccc solid 1px; */
+}
+
+.table th {
+    padding: 10px 5px;
+    border-bottom: 1px solid #ccc;
+}
+
+.table td{
+    /* border-bottom: 1px solid #ccc; */
+    padding: 10px 5px;
+}
+
+/* .table tr:last-child{
+    border-bottom: #ccc solid 1px;
+} */
+
+
+
+.table tr:last-child{
+    border-bottom: none;
+
+}
+
+.tr{
+    border-radius: 15px;
+    border: #ccc solid 1px;
+}
+
+
+.table tr:nth-child(even){
+    background-color: #f9f9f9;
+}
+
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    transition: width 0.3s ease;
+}

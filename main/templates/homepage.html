@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block container %}
+    <section>
+        <div  style="display: flex; flex-direction: column ; column-gap: 5px"">
+            {% for com in company %}
+                    <div class="flex button-group gap-y-2" >
+                        <img src="{{  com.logo.url}}" alt="img" height="100%" style=" margin-right: 15px"> 
+                        <div class="flex; flex-col; text-start" style="text-align: start">
+                            <h2 style="font-size: 1.2rem">{{ com }}</h2>
+                            <div>
+                                <p>Location: {{ com.location }}</p>
+                                <p>Email: {{ com.email }}</p>
+                                {% comment %} <p>{{}}</p> {% endcomment %}
+                            </div>
+                        </div>
+                    </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock container %}
