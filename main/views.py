@@ -10,4 +10,9 @@ class HomePageView(TemplateView):
         context = super().get_context_data(**kwargs)
         context['company'] = Company.objects.all()
         return context
+    
+class MainPageView(TemplateView):
+    template_name ='main.html'
+    
+    
 
